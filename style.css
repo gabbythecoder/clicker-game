@@ -137,6 +137,8 @@ body {
 }
 
 .footer-container p {
+    font-family: "Barrio", sans-serif;
+    letter-spacing: 0.1rem;
     color: #fff;
     z-index: 10;
 }
