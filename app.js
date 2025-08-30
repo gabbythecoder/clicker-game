@@ -80,7 +80,7 @@ async function displayUpgrades() {
 
             const upgradeButton = document.createElement("button");
             upgradeButton.className = "upgrade-button";
-            upgradeButton.textContent = "Buy";
+            upgradeButton.textContent = "Buy"; //default text
 
             //getting the images for the upgrade from the images array 
             const upgradeImage = images[index];
@@ -92,11 +92,11 @@ async function displayUpgrades() {
                 imageUpgradeButton.title = upgradeImage.title;
 
                 //replacing the button with the image
-                upgradeButton.innerHTML = "";
+                upgradeButton.innerHTML = ""; //clearing the upgradeButton default text
                 upgradeButton.appendChild(imageUpgradeButton);
 
                 imageUpgradeButton.className = "image-upgrade-button";
-            }
+            } 
         
             //appending to the DOM
             upgradeContainer.appendChild(upgradeName);
@@ -106,6 +106,9 @@ async function displayUpgrades() {
 
             shopContainer.appendChild(upgradeContainer);
         });
+
+        } else {
+            console.log(`Error: The number of upgrades or images do not match.`); 
     }
 }
 
