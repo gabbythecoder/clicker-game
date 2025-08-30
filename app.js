@@ -43,6 +43,7 @@ function clickCounter() {
     const clickButton = document.getElementById("click-button");
     const countNumber = document.getElementById("counts");
     const displayCPS = document.getElementById("cps-display");
+    const resetButton = document.getElementById("reset-button");
 
     //load from local storage
     stats = getSavedData();
@@ -55,6 +56,15 @@ function clickCounter() {
     clickButton.addEventListener("click", function() {
         stats.punchCount++;
         countNumber.textContent = stats.punchCount;
+        saveStats();
+    })
+
+    //event listener for the reset button
+    resetButton.addEventListener("click", function() {
+        stats.punchCount = 0;
+        stats.cps = 0;
+        countNumber.textContent = stats.punchCount;
+        displayCPS.textContent = "CPS: " + stats.cps;
         saveStats();
     })
 }
