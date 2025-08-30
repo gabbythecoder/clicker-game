@@ -12,33 +12,36 @@
     <title>Punching Bag</title>
 </head>
 <body>
-    <div class="grid-container">
+    
     <h1 class="title">Punching Bag</h1>
 
-        <!-- Left side of the page: punch count + cps -->
-        <div class="stats-panel">
-            <h2 class="punch-count">Punch Count</h2>
-            <p id="counts">0</p>
-            <p id="cps-display">CPS: 0</p>
-        </div>
-    
-        <!-- Center of the page: Punching bag -->
+        <div class="main-container">
+
+        <!-- left of the page: Punching bag -->
         <div class="punch-area">
-         <button id="click-button" class="click-button">
-            <img src="./assets/images/Punching_Bag.png" alt="punching bag" class="punching-bag">
-         </button>
+            <button id="click-button" class="click-button">
+                <img src="./assets/images/Punching_Bag.png" alt="punching bag" class="punching-bag">
+            </button>
         </div>
 
-    <!-- shop container for the shop upgrades -->
-    <div id="shop-container" class="shop-panel"></div>
+        <div class="stats-and-upgrades">
+            <!-- right side of the page: punch count + cps -->
+            <div class="stats-panel">
+                <h2 class="punch-count">Punch Count</h2>
+                <p id="counts">0</p>
+                <p id="cps-display">CPS: 0</p>
+            </div>
+
+            <!-- shop container for the shop upgrades -->
+            <div id="shop-container" class="shop-panel"></div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
-        <p>&copy;</p>
+        <p>&copy; Gabby French 2025 | Made with ❤️ in the UK</p>
         </div>
     </footer>
-    </div>
-
     
 </body>
 </html>
