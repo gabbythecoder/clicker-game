@@ -5,66 +5,37 @@ body {
     background-image: url('./assets/images/Gym.png');
     background-size: cover;
     background-repeat: no-repeat;
-    max-height: 100vh;
-}
-
-/* === grid setup === */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto 1fr max-content;
-    gap: 0.8vw;
-    min-height: 100vh;
-    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
-    grid-column: 1 / -2;
     font-family: "Barrio", sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 1rem 0;
-    padding: 0.5rem;
-    max-width: 100%;
     color: #fff;
     letter-spacing: 0.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* === left panel - stats === */
-.stats-panel {
-    grid-row: 2;
-    font-family: "Barrio", sans-serif;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    align-self: center;
-    line-height: 1.3;
-    letter-spacing: 0.1rem;
 }
 
-.punch-count {
-    font-size: 2rem;
+/* === main content: punching bag + right side of the page === */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    overflow: hidden;
 }
 
-#counts {
-    font-size: 2.5rem;
-}
-
-#cps-display {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-/* === center panel - for the punching bag === */
+/* === punching bag area === */
 .punch-area {
-    grid-column: 2 / 4;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
 .click-button {
@@ -75,35 +46,62 @@ body {
 }
 
 .punching-bag {
-    width: 90%;
+    /* width: 70%; */
     height: auto;
+    max-height: 80vh;
     object-fit: contain;
 }
 
-/* === right panel - upgrades === */
-#shop-container {
-    grid-column: 4 / -1;
+
+/* === right panel - stats and upgrades === */
+.stats-and-upgrades {
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    gap: 1rem;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+/* === stats section === */
+.stats-panel {
+    font-family: "Barrio", sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+}
+
+.punch-count {
+    font-size: 2.8rem;
+}
+
+#counts {
+    font-size: 2.8rem;
+}
+
+#cps-display {
+    font-size: 1.8rem;
+}
+
+/* === shop upgrades panel === */
+#shop-container {
+    flex: 1;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 1rem;
     border-radius: 10px;
     font-family: "Barrio", sans-serif;
-    width: 50%;
     margin: auto;
-    max-height: 60%;
-    height: auto;
     overflow-y: auto;
 }
 
 .upgrade-container {
-    margin: 0.5rem 0;
     display: flex;
     align-items: center;
-    width: 100%;
+    margin: 0.5rem 0;
 }
 
 .upgrade-button {
@@ -119,9 +117,8 @@ body {
 }
 
 .upgrade-description {
-    line-height: 1.4;
+    line-height: 1.5;
     letter-spacing: 0.1rem;
-    flex-grow: 1;
 }
 
 .upgrade-description h3 {
@@ -134,15 +131,9 @@ body {
 
 /* footer */
 .footer-container {
-    grid-column: 1 / -1;
     text-align: center;
-    margin-top: 1rem;
     padding: 1rem;
-    position: sticky;
-    bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    position: sticky;
-    bottom: 0;
 }
 
 .footer-container p {
