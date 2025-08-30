@@ -1,7 +1,9 @@
 // console.log("hello world"); testing
 
-let punchCount = 0;
-let cps = 0;
+let stats = {
+    punchCount: 0,
+    cps: 0
+}
 
 const images = [
     {
@@ -26,19 +28,32 @@ const images = [
     }
 ];
 
+//local storage
+function getSavedData() {
+    const savedStats = localStorage.getItem("stats");
+        return savedStats ? JSON.parse(savedStats) : { punchCount: 0, cps: 0 };
+}
+
+function saveStats() {
+    localStorage.setItem("stats", JSON.stringify(stats));
+}
+
 //setting up the clickCounter() 
 function clickCounter() {
     const clickButton = document.getElementById("click-button");
     const countNumber = document.getElementById("counts");
 
     //load from local storage
-    const savedCount = localStorage.getItem("punchCount");
-    punchCount = savedCount ? Number(savedCount) : 0;
+    stats = getSavedData();
 
+    //display the punchCount on page load
+    countNumber.textContent = stats.punchCount;
+
+    //event listener for the click button
     clickButton.addEventListener("click", function() {
-        punchCount++;
-        countNumber.textContent = punchCount;
-        localStorage.setItem("punchCount", punchCount); 
+        stats.punchCount++;
+        countNumber.textContent = stats.punchCount;
+        saveStats(stats);
     })
 }
 
@@ -115,38 +130,38 @@ async function displayUpgrades() {
 displayUpgrades();
 
 //writing function for each upgrade 
-function autoClicker() {
-    if (cookieCount >= 100) {
-        cookieCount -= 100;
-        cps += 1;
+// function autoClicker() {
+//     if (cookieCount >= 100) {
+//         cookieCount -= 100;
+//         cps += 1;
         // updateDisplay() -> will need to write a function for this
-    }
-}
+//     }
+// }
 
-function enhancedOven() {
-    if (cookieCount >= 500) {
-        cookieCount -= 500;
-        cps += 5;
-    }
-}
+// function enhancedOven() {
+//     if (cookieCount >= 500) {
+//         cookieCount -= 500;
+//         cps += 5;
+//     }
+// }
 
-function cookieFarm() {
-    if (cookieCount >= 1000) {
-        cookieCount -= 1000;
-        cps += 10;
-    }
-}
+// function cookieFarm() {
+//     if (cookieCount >= 1000) {
+//         cookieCount -= 1000;
+//         cps += 10;
+//     }
+// }
 
-function robotBaker() {
-    if (cookieCount >= 2000) {
-        cookieCount -= 2000;
-        cps += 20;
-    }
-}
+// function robotBaker() {
+//     if (cookieCount >= 2000) {
+//         cookieCount -= 2000;
+//         cps += 20;
+//     }
+// }
 
-function cookieFactory() {
-    if (cookieCount >= 5000) {
-        cookieCount -= 5000;
-        cps += 50;
-    }
-}
+// function cookieFactory() {
+//     if (cookieCount >= 5000) {
+//         cookieCount -= 5000;
+//         cps += 50;
+//     }
+// }
