@@ -3,6 +3,29 @@
 let punchCount = 0;
 let cps = 0;
 
+const images = [
+    {
+        title: "Fist",
+        src: "./assets/images/Fist.png",
+        alt: "An icon image of a fist"
+    },
+    {
+        title: "Wrapped First",
+        src: "./assets/images/Wrapped-Fist.png",
+        alt: "An icon image of a wrapped first"
+    },
+    {
+        title: "Boxing Glove",
+        src: "./assets/images/Boxing-Glove.png",
+        alt: "An icon image of a boxing glove"
+    },
+    {
+        title: "Robot Fist",
+        src: "./assets/images/Robot-Fist.png",
+        alt: "An icon image of a robot fist"
+    }
+];
+
 //setting up the clickCounter() 
 function clickCounter() {
     const clickButton = document.getElementById("click-button");
@@ -27,7 +50,7 @@ async function fetchUpgrades() {
     const upgrades = await response.json();
 
     //using the filter() method to cut down on the amount of upgrades used in the game
-    const filterUpgrades = upgrades.filter((upgrade) => upgrade.id < 4);
+    const filterUpgrades = upgrades.filter((upgrade) => upgrade.id < 5);
     console.log(filterUpgrades);
 
     return filterUpgrades;
@@ -36,7 +59,7 @@ async function fetchUpgrades() {
 fetchUpgrades();
 
 //appending the upgrades to the DOM
-async function shopUpgrades() {
+async function displayUpgrades() {
     const upgrades = await fetchUpgrades();
     const shopContainer = document.getElementById("shop-container");
 
@@ -67,7 +90,7 @@ async function shopUpgrades() {
     });
 }
 
-shopUpgrades();
+displayUpgrades();
 
 //writing function for each upgrade 
 function autoClicker() {
