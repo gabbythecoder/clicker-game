@@ -42,18 +42,20 @@ function saveStats() {
 function clickCounter() {
     const clickButton = document.getElementById("click-button");
     const countNumber = document.getElementById("counts");
+    const displayCPS = document.getElementById("cps-display");
 
     //load from local storage
     stats = getSavedData();
 
-    //display the punchCount on page load
+    //display the punchCount and cps on page load
     countNumber.textContent = stats.punchCount;
+    displayCPS.textContent = "CPS: " + stats.cps;
 
     //event listener for the click button
     clickButton.addEventListener("click", function() {
         stats.punchCount++;
         countNumber.textContent = stats.punchCount;
-        saveStats(stats);
+        saveStats();
     })
 }
 
@@ -106,7 +108,7 @@ async function displayUpgrades() {
                 imageUpgradeButton.alt = upgradeImage.alt;
                 imageUpgradeButton.title = upgradeImage.title;
 
-                //replacing the button with the image
+                //replacing the button text with the image
                 upgradeButton.innerHTML = ""; //clearing the upgradeButton default text
                 upgradeButton.appendChild(imageUpgradeButton);
 
@@ -120,6 +122,11 @@ async function displayUpgrades() {
             upgradeContainer.appendChild(upgradeButton);
 
             shopContainer.appendChild(upgradeContainer);
+
+            //add event listener to the imageUpgradeButton 
+            upgradeButton.addEventListener("click", function() {
+                buyUpgrades(upgrade);
+            })
         });
 
         } else {
@@ -129,39 +136,22 @@ async function displayUpgrades() {
 
 displayUpgrades();
 
-//writing function for each upgrade 
-// function autoClicker() {
-//     if (cookieCount >= 100) {
-//         cookieCount -= 100;
-//         cps += 1;
-        // updateDisplay() -> will need to write a function for this
-//     }
-// }
+function buyUpgrades(upgrade) {
+    if (stats.punchCount >= upgrade.cost) {
+        stats.punchCount -= upgrade.cost;
 
-// function enhancedOven() {
-//     if (cookieCount >= 500) {
-//         cookieCount -= 500;
-//         cps += 5;
-//     }
-// }
+        //update cps after purchasing new upgrade
+        stats.cps += upgrade.increase;
 
-// function cookieFarm() {
-//     if (cookieCount >= 1000) {
-//         cookieCount -= 1000;
-//         cps += 10;
-//     }
-// }
+        saveStats();
 
-// function robotBaker() {
-//     if (cookieCount >= 2000) {
-//         cookieCount -= 2000;
-//         cps += 20;
-//     }
-// }
+        //update the display 
+        document.getElementById("counts").textContent = stats.punchCount;
+        document.getElementById("cps-display").textContent = "CPS: " + stats.cps;
 
-// function cookieFactory() {
-//     if (cookieCount >= 5000) {
-//         cookieCount -= 5000;
-//         cps += 50;
-//     }
-// }
+    } else {
+        alert(`Not enough punchCount for ${upgrade.name}`);
+    }
+}
+
+//setting up the interval to increment automatically every second 
