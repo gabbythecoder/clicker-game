@@ -89,3 +89,14 @@ body {
     margin: 1rem 0;
 }
 
+.upgrade-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.image-upgrade-button {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
