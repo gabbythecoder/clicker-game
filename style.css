@@ -50,8 +50,12 @@ body {
     height: auto;
     max-height: 80vh;
     object-fit: contain;
+    transition: 0.3s linear;
 }
 
+.punching-bag:hover {
+    transform: scaleX(1.1);
+}
 
 /* === right panel - stats and upgrades === */
 .stats-and-upgrades {
@@ -114,6 +118,11 @@ body {
 .image-upgrade-button {
     width: 4rem;
     height: 4rem;
+    transition: .2s linear;
+}
+
+.image-upgrade-button:hover {
+    transform: scale(1.2);
 }
 
 .upgrade-description {
@@ -129,7 +138,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* footer */
+/* === footer === */
 .footer-container {
     text-align: center;
     padding: 1rem;
