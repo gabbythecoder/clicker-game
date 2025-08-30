@@ -20,3 +20,5 @@
 ## Resources:
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 - https://www.youtube.com/watch?v=1C-seWzn9vo&ab_channel=Soupy 
+
+## Reflection:
