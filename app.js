@@ -155,3 +155,8 @@ function buyUpgrades(upgrade) {
 }
 
 //setting up the interval to increment automatically every second 
+setInterval(function() {
+    stats.punchCount += stats.cps;
+    document.getElementById("counts").textContent = stats.punchCount;
+    saveStats();
+}, 1000);
