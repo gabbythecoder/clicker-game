@@ -79,6 +79,7 @@ async function displayUpgrades() {
             upgradeIncrease.textContent = "Increase: " + upgrade.increase;
 
             const upgradeButton = document.createElement("button");
+            upgradeButton.className = "upgrade-button";
             upgradeButton.textContent = "Buy";
 
             //getting the images for the upgrade from the images array 
