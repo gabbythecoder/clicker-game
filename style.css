@@ -8,10 +8,10 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "Barrio", sans-serif;
 }
 
 .title {
-    font-family: "Barrio", sans-serif;
     font-size: 3.5rem;
     margin: 1rem 0;
     color: #fff;
@@ -53,7 +53,7 @@ body {
     transition: transform 0.1s ease;
 }
 
-/* adding animation on the punching bag when clicking on it */
+/* === adding animation on the punching bag when clicking on it === */
 .punching-bag.punched {
     transform: scale(0.9) rotate(-5deg);
 }
@@ -70,7 +70,6 @@ body {
 
 /* === stats section === */
 .stats-panel {
-    font-family: "Barrio", sans-serif;
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
@@ -98,7 +97,6 @@ body {
     color: #fff;
     padding: 1rem;
     border-radius: 10px;
-    font-family: "Barrio", sans-serif;
     margin: auto;
     overflow-y: auto;
 }
@@ -139,6 +137,26 @@ body {
     font-size: 0.9rem;
 }
 
+/* === reset button === */
+#reset-button {
+    width: 7rem;
+    height: 3rem;
+    align-self: center; /*using align-self since this is inside stats-and-upgrade div */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: "Barrio", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+#reset-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 /* === footer === */
 .footer-container {
     text-align: center;
@@ -147,7 +165,6 @@ body {
 }
 
 .footer-container p {
-    font-family: "Barrio", sans-serif;
     letter-spacing: 0.1rem;
     color: #fff;
     z-index: 10;
