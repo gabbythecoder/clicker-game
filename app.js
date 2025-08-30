@@ -85,16 +85,6 @@ async function displayUpgrades() {
             const upgradeContainer = document.createElement("div");
             upgradeContainer.className = "upgrade-container";
 
-            //assigning text content 
-            const upgradeName = document.createElement("h3");
-            upgradeName.textContent = upgrade.name;
-
-            const upgradeCost = document.createElement("p");
-            upgradeCost.textContent = "Cost: " + upgrade.cost;
-
-            const upgradeIncrease = document.createElement("p");
-            upgradeIncrease.textContent = "Increase: " + upgrade.increase;
-
             const upgradeButton = document.createElement("button");
             upgradeButton.className = "upgrade-button";
             upgradeButton.textContent = "Buy"; //default text
@@ -113,14 +103,34 @@ async function displayUpgrades() {
                 upgradeButton.appendChild(imageUpgradeButton);
 
                 imageUpgradeButton.className = "image-upgrade-button";
-            } 
-        
-            //appending to the DOM
-            upgradeContainer.appendChild(upgradeName);
-            upgradeContainer.appendChild(upgradeCost);
-            upgradeContainer.appendChild(upgradeIncrease);
-            upgradeContainer.appendChild(upgradeButton);
+            }
 
+            //assigning text content 
+            const upgradeDescription = document.createElement("div");
+            upgradeDescription.className = "upgrade-description";
+
+            const upgradeName = document.createElement("h3");
+            upgradeName.className = "upgrade-name";
+            upgradeName.textContent = upgrade.name;
+
+            const upgradeCost = document.createElement("p");
+            upgradeCost.className = "upgrade-cost";
+            upgradeCost.textContent = "Cost: " + upgrade.cost;
+
+            const upgradeIncrease = document.createElement("p");
+            upgradeIncrease.className = "upgrade-increase";
+            upgradeIncrease.textContent = "Increase: " + upgrade.increase;
+
+            //appending to the description container
+            upgradeDescription.appendChild(upgradeName);
+            upgradeDescription.appendChild(upgradeCost);
+            upgradeDescription.appendChild(upgradeIncrease);
+
+            //appending the upgradeButton and upgradeDescription to upgradeContainer
+            upgradeContainer.appendChild(upgradeButton);
+            upgradeContainer.appendChild(upgradeDescription);
+
+            //append to the shop container 
             shopContainer.appendChild(upgradeContainer);
 
             //add event listener to the imageUpgradeButton 
@@ -154,7 +164,7 @@ function buyUpgrades(upgrade) {
     }
 }
 
-//setting up the interval to increment automatically every second 
+// setting up the interval to increment automatically every second 
 setInterval(function() {
     stats.punchCount += stats.cps;
     document.getElementById("counts").textContent = stats.punchCount;
