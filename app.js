@@ -63,31 +63,49 @@ async function displayUpgrades() {
     const upgrades = await fetchUpgrades();
     const shopContainer = document.getElementById("shop-container");
 
-    upgrades.forEach(function(upgrade) {
-        const upgradeContainer = document.createElement("div");
-        upgradeContainer.className = "upgrade-container";
+    if (upgrades.length === 4 && images.length === 4) {
+        upgrades.forEach(function(upgrade, index) {
+            const upgradeContainer = document.createElement("div");
+            upgradeContainer.className = "upgrade-container";
 
-        //assigning text content 
-        const upgradeName = document.createElement("h3");
-        upgradeName.textContent = upgrade.name;
+            //assigning text content 
+            const upgradeName = document.createElement("h3");
+            upgradeName.textContent = upgrade.name;
 
-        const upgradeCost = document.createElement("p");
-        upgradeCost.textContent = "Cost: " + upgrade.cost;
+            const upgradeCost = document.createElement("p");
+            upgradeCost.textContent = "Cost: " + upgrade.cost;
 
-        const upgradeIncrease = document.createElement("p");
-        upgradeIncrease.textContent = "Increase: " + upgrade.increase;
+            const upgradeIncrease = document.createElement("p");
+            upgradeIncrease.textContent = "Increase: " + upgrade.increase;
 
-        const upgradeButton = document.createElement("button");
-        upgradeButton.textContent = "Buy";
+            const upgradeButton = document.createElement("button");
+            upgradeButton.textContent = "Buy";
+
+            //getting the images for the upgrade from the images array 
+            const upgradeImage = images[index];
+
+            if (upgradeImage) {
+                const imageUpgradeButton = document.createElement("img");
+                imageUpgradeButton.src = upgradeImage.src;
+                imageUpgradeButton.alt = upgradeImage.alt;
+                imageUpgradeButton.title = upgradeImage.title;
+
+                //replacing the button with the image
+                upgradeButton.innerHTML = "";
+                upgradeButton.appendChild(imageUpgradeButton);
+
+                imageUpgradeButton.className = "image-upgrade-button";
+            }
         
-        //appending to the DOM
-        upgradeContainer.appendChild(upgradeName);
-        upgradeContainer.appendChild(upgradeCost);
-        upgradeContainer.appendChild(upgradeIncrease);
-        upgradeContainer.appendChild(upgradeButton);
+            //appending to the DOM
+            upgradeContainer.appendChild(upgradeName);
+            upgradeContainer.appendChild(upgradeCost);
+            upgradeContainer.appendChild(upgradeIncrease);
+            upgradeContainer.appendChild(upgradeButton);
 
-        shopContainer.appendChild(upgradeContainer);
-    });
+            shopContainer.appendChild(upgradeContainer);
+        });
+    }
 }
 
 displayUpgrades();
