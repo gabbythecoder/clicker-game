@@ -59,8 +59,6 @@ function clickCounter() {
     })
 }
 
-clickCounter();
-
 //fetching API
 async function fetchUpgrades() {
     const response = await fetch("https://cookie-upgrade-api.vercel.app/api/upgrades");
@@ -170,3 +168,16 @@ setInterval(function() {
     document.getElementById("counts").textContent = stats.punchCount;
     saveStats();
 }, 1000);
+
+clickCounter();
+
+//testing animations for my punching bag image
+const punchImage = document.querySelector(".punching-bag");
+
+punchImage.addEventListener("click", function() {
+    punchImage.classList.add("punched");
+    setTimeout(function() {
+        punchImage.classList.remove("punched");
+    }, 150);
+});
+
