@@ -1,0 +1,91 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+body {
+    background-color: black;
+    background-image: url('./assets/images/Gym.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+/* === grid setup === */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 0.8vw;
+    height: 100vh;
+}
+
+.title {
+    grid-column: 4 / -1;
+    font-family: "Barrio", sans-serif;
+    font-size: 3rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    max-width: 100%;
+    color: #fff;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === left panel - stats === */
+.stats-panel {
+    font-family: "Barrio", sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    align-self: center;
+    line-height: 1.3;
+    letter-spacing: 0.1rem;
+}
+
+.punch-count {
+    font-size: 2rem;
+}
+
+#counts {
+    font-size: 2.5rem;
+}
+
+#cps-display {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.punch-area {
+    grid-column: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.click-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.punching-bag {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#shop-container {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.upgrade-container {
+    margin: 1rem 0;
+}
+
