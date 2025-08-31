@@ -44,6 +44,8 @@ function clickCounter() {
     const countNumber = document.getElementById("counts");
     const displayCPS = document.getElementById("cps-display");
     const resetButton = document.getElementById("reset-button");
+    const punchSound = document.getElementById("punch-sound");
+    const volumeControl = document.getElementById("volume-control");
 
     //load from local storage
     stats = getSavedData();
@@ -52,11 +54,22 @@ function clickCounter() {
     countNumber.textContent = stats.punchCount;
     displayCPS.textContent = "CPS: " + stats.cps;
 
+    //setting the default volume for punchSound
+    punchSound.volume = 0.5;
+
     //event listener for the click button
     clickButton.addEventListener("click", function() {
         stats.punchCount++;
         countNumber.textContent = stats.punchCount;
         saveStats();
+
+        punchSound.currentTime = 0; //resets the sound
+        punchSound.play();
+    })
+
+    //adjusting volume bar
+    volumeControl.addEventListener("input", function() {
+        punchSound.volume = volumeControl.value;
     })
 
     //event listener for the reset button
@@ -179,8 +192,6 @@ setInterval(function() {
     saveStats();
 }, 1000);
 
-clickCounter();
-
 //testing animations for my punching bag image
 const punchImage = document.querySelector(".punching-bag");
 
@@ -191,3 +202,4 @@ punchImage.addEventListener("click", function() {
     }, 150);
 });
 
+clickCounter();
