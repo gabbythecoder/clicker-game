@@ -52,14 +52,15 @@ Any feedback will be appreciated as I am always looking for ways to continuously
 </div>
 
 ## Resources:
-These are the tutorials and resources that I found useful that helped me with this assignment: 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-- https://www.youtube.com/watch?v=1C-seWzn9vo&ab_channel=Soupy 
-- https://www.youtube.com/watch?v=d6lHO2EI1WI&ab_channel=OnlineTutorials
-- https://www.youtube.com/watch?v=0R6rZngcHGg&ab_channel=ProgrammingTT
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-- https://www.w3schools.com/html/html_favicon.asp#:~:text=To%20add%20a%20favicon%20to,is%20%22favicon.ico%22.
-- https://www.codecademy.com 
+These are the tutorials and resources that I found useful that helped me with this assignment:
+- [Codecademy](https://www.codecademy.com)  
+- [Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+- [HTML Favicon](https://www.w3schools.com/html/html_favicon.asp#:~:text=To%20add%20a%20favicon%20to,is%20%22favicon.ico%22)
+- [How to make a simple cookie clicker game with HTML and JavaScript (2025)](https://www.youtube.com/watch?v=1C-seWzn9vo&ab_channel=Soupy)
+- [How to make Animated Click Effect using CSS & Javascript](https://www.youtube.com/watch?v=d6lHO2EI1WI&ab_channel=OnlineTutorials)
+- [Button Click Sound Effect | In HTML CSS and JavaScript | HTML Tutorial For Beginners](https://www.youtube.com/watch?v=0R6rZngcHGg&ab_channel=ProgrammingTT)
+
 
 ## Sound Effect Audio:
 - Sound Effect by freesound_community from Pixabay 
