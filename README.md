@@ -43,9 +43,13 @@ Any feedback will be appreciated as I am always looking for ways to continuously
 
 ## Errors or Bugs 
 - While inspecting my webpage, the 404 favicon error keeps popping up. With the help of my fellow bootcamper and reading through documentation, I was able to sort out the issue. I used one of the images in my game and converted it into an .ico image and added it to ```<head>``` section of my index.html file:
-    ![screenshot of error message](./images/favicon-error.png)
+<div align="center">
+    <img src="./images/favicon-error.png">
+</div>
 
-    ![favicon icon on tab](./images/tab-favicon.png);
+<div align="center">
+    <img src="./images/tab-favicon.png">
+</div>
 
 ## Resources:
 These are the tutorials and resources that I found useful that helped me with this assignment: 
