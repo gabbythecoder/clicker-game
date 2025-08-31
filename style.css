@@ -2,7 +2,7 @@
 
 body {
     background-color: black;
-    background-image: url('./assets/images/Gym.png');
+    background-image: url('./images/Gym.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;

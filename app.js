@@ -8,22 +8,22 @@ let stats = {
 const images = [
     {
         title: "Fist",
-        src: "./assets/images/Fist.png",
+        src: "./images/Fist.png",
         alt: "An icon image of a fist"
     },
     {
         title: "Wrapped First",
-        src: "./assets/images/Wrapped-Fist.png",
+        src: "./images/Wrapped-Fist.png",
         alt: "An icon image of a wrapped first"
     },
     {
         title: "Boxing Glove",
-        src: "./assets/images/Boxing-Glove.png",
+        src: "./images/Boxing-Glove.png",
         alt: "An icon image of a boxing glove"
     },
     {
         title: "Robot Fist",
-        src: "./assets/images/Robot-Fist.png",
+        src: "./images/Robot-Fist.png",
         alt: "An icon image of a robot fist"
     }
 ];
