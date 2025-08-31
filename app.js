@@ -82,19 +82,30 @@ function clickCounter() {
     })
 }
 
-//fetching API
+//fetching API -> added try/catch for error handling 
 async function fetchUpgrades() {
-    const response = await fetch("https://cookie-upgrade-api.vercel.app/api/upgrades");
-    const upgrades = await response.json();
+    try {
+        const response = await fetch("https://cookie-upgrade-api.vercel.app/api/upgrades");
 
-    //using the filter() method to cut down on the amount of upgrades used in the game
-    const filterUpgrades = upgrades.filter((upgrade) => upgrade.id < 5);
-    console.log(filterUpgrades);
+        if(!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
 
-    return filterUpgrades;
+        const upgrades = await response.json();
+
+        //using the filter() method to cut down on the amount of upgrades used in the game
+        const filterUpgrades = upgrades.filter((upgrade) => upgrade.id < 5);
+        console.log(filterUpgrades);
+
+        return filterUpgrades;
+
+    } catch (error) {
+        console.log("Error with fetching API:" + error);
+        return [];
+    }
 }
 
-fetchUpgrades();
+// fetchUpgrades();
 
 //appending the upgrades to the DOM
 async function displayUpgrades() {
