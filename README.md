@@ -27,7 +27,11 @@ This week, we had to build a simple clicking game. I took inspiration from the c
 
 I have managed to achieve the requirements for this assignment. As a challenge to myself, I also took on the stretch requirements and successfully completed this too. 
 
-When implementing the try/catch statements for error handling, I read through MDN docs and codecademy resources. I added this statement in my fetchUpgrades function just in case an error occurs there since it is the part that is most likely to fail. Any errors encountered will be logged accordingly.  
+When implementing the try/catch statements for error handling, I read through MDN docs and Codecademy resources. I added this statement in my fetchUpgrades function just in case an error occurs there since it is the part that is most likely to fail. Any errors encountered will be logged accordingly. 
+
+What I am proud of with this assignment is the sound effect I added whenever the user clicks on the punching bag. I wanted to give this game a more cartoon-like vibe with a retro feel and I believe the sound effect that I chose pairs very well with the theme of the game. I also added a volume bar so users can adjust the sound effect volume to their liking.
+
+Another addition I implemented is the reset button. When I was testing the game, after purchasing an upgrade, the CPS increases which means that the punch count increments automatically. Overtime, the punch count kept getting higher so I added the reset button to bring the punch count and CPS back to the default value, which is zero. I believe this button would be beneficial for users if they want to reset the game status. 
 
 There were a couple of things that I found difficult with this assignment. The first one was trying to save the game progress for users in local storage. At first, I wrote the localStorage into my clickCounter function. It did manage to save the data but everytime I refreshed the page, it wouldn't update the display on the webpage. I went over the class resources that was provided in Moodle and decided to write localStorage as its own function for better readability. It now saves all the game progress like the punchCount and cps, and displays it correctly even after refreshing the page. 
 
